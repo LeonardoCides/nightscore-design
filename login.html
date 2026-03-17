@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Nightscore</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Outfit:wght@900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cursor-glow"></div>
+
+    <header class="main-header">
+        <div class="logo-container" onclick="window.location.href='/'">
+            <div class="logo-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+            <span class="logo-text">Nightscore</span>
+        </div>
+        <button class="btn-login" onclick="window.location.href='/register.html'">
+            <i class="fa-solid fa-user-plus"></i> Criar Conta
+        </button>
+    </header>
+
+    <main class="auth-main">
+        <div class="auth-container">
+            <div class="auth-card login-card">
+                <div class="auth-header">
+                    <div class="logo-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+                    <h2>Entrar no Nightscore</h2>
+                    <p>Conecte-se com a vida noturna.</p>
+                </div>
+
+                <form id="formLogin" onsubmit="handleLoginSubmit(event)">
+                    <div class="form-group full-width">
+                        <label>E-mail ou Username</label>
+                        <input type="text" id="login-identifier" placeholder="ex: @joao ou joao@email.com" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Senha</label>
+                        <input type="password" id="login-senha" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="btn-add full-width">ENTRAR ↗</button>
+                    <p class="auth-link" onclick="window.location.href='/register.html'">Não tem conta? <strong>Criar Conta</strong></p>
+                </form>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="js/ui-upgraded.js"></script>
+    <script src="js/auth-handlers.js"></script>
+
+</body>
+</html>
