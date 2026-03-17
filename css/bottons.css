@@ -1,0 +1,260 @@
+/* ============================================================
+   NIGHTSCORE PREMIUM - INTERAÇÕES E BOTÕES (FLUIDEZ TOTAL)
+   ============================================================ */
+
+.icon-btn, .btn-add, .tag, .filter-btn, .btn-cancel, .delete-btn-glow {
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1) !important;
+    outline: none !important;
+    backface-visibility: hidden; /* Evita trepidação de subpixel */
+    transform-style: preserve-3d;
+}
+
+/* BOTÕES DE ÍCONE (NOTIFICAÇÃO, PERFIL, ETC) */
+.icon-btn {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #a1a1aa !important;
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 14px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    will-change: transform, background;
+}
+
+.icon-btn:hover {
+    background: rgba(168, 85, 247, 0.1) !important;
+    border-color: #a855f7 !important;
+    color: #fff !important;
+    /* Rotação reduzida para 3deg para um ar mais sério/premium */
+    transform: translateY(-4px) rotate(3deg) !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 
+                0 0 15px rgba(168, 85, 247, 0.2) !important;
+}
+
+/* AUTH LOGIN BUTTON - Moved from auth-btn.css */
+.btn-login {
+  background: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%) !important;
+  border: none !important;
+  color: white !important;
+  padding: 12px 20px !important;
+  border-radius: 16px !important;
+  font-weight: 800 !important;
+  font-size: 0.75rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  cursor: pointer !important;
+  box-shadow: 0 8px 20px rgba(126, 34, 206, 0.35) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1) !important;
+  white-space: nowrap !important;
+}
+
+.btn-login:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+  box-shadow: 0 12px 25px rgba(168, 85, 247, 0.5) !important;
+}
+
+.btn-login.btn-logged {
+  padding: 12px 16px !important;
+  font-size: 0.7rem !important;
+}
+
+/* Força visibilidade no nav-actions */
+.nav-actions button:not(.btn-add):not(.profile-btn):not(.btn-login),
+.nav-actions a:not(.btn-add):not(.profile-btn):not(.btn-login) {
+    display: none !important;
+}
+
+.nav-actions .btn-login {
+  display: flex !important;
+}
+
+
+/* BOTÃO ADICIONAR FESTA */
+.btn-add {
+    position: relative !important;
+    overflow: hidden !important;
+    background: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%) !important;
+    border: none !important;
+    color: white !important;
+    padding: 12px 24px !important;
+    border-radius: 16px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 1px !important;
+    cursor: pointer !important;
+    box-shadow: 0 8px 20px rgba(126, 34, 206, 0.35) !important;
+    will-change: transform;
+}
+
+
+.btn-add::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent) !important;
+    transition: 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+.btn-add:hover {
+    transform: scale(1.03) translateY(-2px) !important;
+    box-shadow: 0 12px 25px rgba(168, 85, 247, 0.5) !important;
+}
+
+.btn-add:hover::before {
+    left: 100% !important;
+}
+
+.btn-add:active {
+    transform: scale(0.96) !important; /* Feedback de compressão estilo iOS */
+    transition: all 0.1s !important;
+}
+
+/* FILTROS E TAGS */
+.tag {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.03);
+    color: #a1a1aa;
+    padding: 8px 18px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important; /* Curva elástica */
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    white-space: nowrap;
+}
+
+.tag.active {
+    background: #a855f7 !important;
+    color: white !important;
+    border-color: #a855f7 !important;
+    box-shadow: 0 8px 15px rgba(168, 85, 247, 0.3) !important;
+    transform: scale(1.05) !important;
+}
+
+.tag:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #fff !important;
+    border-color: rgba(168, 85, 247, 0.5) !important;
+    transform: translateY(-3px) !important;
+}
+
+/* BOTÕES DO MODAL / FILTRO */
+.filter-btn {
+    background: rgba(15, 15, 15, 0.6) !important;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    color: #fff !important;
+    padding: 10px 18px !important;
+    border-radius: 14px !important;
+    font-size: 0.85rem !important;
+    font-weight: 700 !important;
+}
+
+.filter-btn:hover {
+    background: rgba(168, 85, 247, 0.15) !important;
+    border-color: #a855f7 !important;
+    transform: translateY(-2px) scale(1.02) !important;
+}
+
+.btn-cancel {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #71717a !important;
+    border-radius: 16px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    font-size: 0.7rem !important;
+}
+
+.btn-cancel:hover {
+    background: rgba(239, 68, 68, 0.1) !important;
+    color: #ef4444 !important;
+    border-color: rgba(239, 68, 68, 0.3) !important;
+}
+
+/* BOTÃO DE EXCLUIR */
+.delete-btn-glow {
+    background: rgba(10, 10, 10, 0.8) !important;
+    backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(239, 68, 68, 0.3) !important;
+    color: #ef4444 !important;
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 0;
+    transform: translateX(10px);
+    will-change: transform, opacity;
+}
+
+.delete-btn-glow:hover {
+    background: #ef4444 !important;
+    color: #fff !important;
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.5) !important;
+    transform: scale(1.1) rotate(-5deg) !important;
+}
+
+/* MODAL ACTIONS GRID */
+.modal-actions {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 15px !important;
+    margin-top: 25px !important;
+}
+
+/* Spinner de carregamento dentro do input */
+.input-loader {
+    position: absolute;
+    right: 15px;
+    top: 38px;
+    color: #a855f7;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Toasts de Notificação (Festa Publicada / Erro) */
+.toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    background: #1a1a1a;
+    color: white;
+    padding: 16px 24px;
+    border-radius: 12px;
+    border-left: 4px solid #a855f7;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transform: translateX(120%);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.toast.show {
+    transform: translateX(0);
+}
+
+.toast.success { border-left-color: #22c55e; }
+.toast.error { border-left-color: #ef4444; }
+.toast i { font-size: 1.2rem; }

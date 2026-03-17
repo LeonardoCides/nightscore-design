@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600&display=swap');
+
+.search-section {
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 80px auto 40px auto !important;
+    padding: 0 2rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 40px !important;
+}
+
+.search-box {
+    display: flex !important;
+    align-items: center !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    backdrop-filter: blur(30px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(30px) saturate(180%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 24px !important;
+    width: 100% !important;
+    max-width: 650px !important;
+    height: 64px !important;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2) !important;
+    position: relative !important;
+}
+
+.search-box:focus-within {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border-color: rgba(168, 85, 247, 0.4) !important;
+    transform: translateY(-4px) scale(1.01) !important;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 20px rgba(168, 85, 247, 0.15) !important;
+}
+
+.search-box i {
+    margin-left: 24px !important;
+    color: #a855f7 !important;
+    font-size: 1.2rem !important;
+    filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.6)) !important;
+}
+
+.search-box input {
+    flex: 1 !important;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    padding: 0 20px !important;
+    color: #fff !important;
+    font-family: 'SF Pro Display', 'Inter', sans-serif !important;
+    font-size: 1.1rem !important;
+    font-weight: 400 !important;
+    letter-spacing: -0.2px !important;
+}
+
+.search-box input::placeholder {
+    color: rgba(255, 255, 255, 0.3) !important;
+    transition: color 0.3s ease !important;
+}
+
+.search-box:focus-within input::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.categories-scroll {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    scrollbar-width: none !important;
+    padding: 10px 0 !important;
+}
+
+.categories-scroll::-webkit-scrollbar {
+    display: none !important;
+}
+
+.tag {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+    padding: 10px 24px !important;
+    border-radius: 16px !important;
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+}
+
+.tag:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #fff !important;
+    transform: translateY(-2px) !important;
+}
+
+.tag.active {
+    background: #fff !important;
+    color: #000 !important;
+    border-color: #fff !important;
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1) !important;
+}
+
+@media (max-width: 768px) {
+    .search-section {
+        margin: 40px auto !important;
+    }
+    .search-box {
+        max-width: 100% !important;
+        height: 58px !important;
+    }
+    .categories-scroll {
+        justify-content: flex-start !important;
+        padding-left: 20px !important;
+    }
+}
+
+.search-container-premium {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 30px !important;
+    margin: 60px auto !important;
+}
+
+.search-container-premium .search-box {
+    display: flex !important;
+    align-items: center !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    backdrop-filter: blur(25px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(25px) saturate(180%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 22px !important;
+    width: 100% !important;
+    max-width: 600px !important;
+    padding: 8px 15px !important;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.search-container-premium .search-box:focus-within {
+    background: rgba(255, 255, 255, 0.07) !important;
+    border-color: #a855f7 !important;
+    transform: scale(1.02) !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3) !important;
+}
+
+.search-container-premium .search-box i {
+    color: #a855f7 !important;
+    font-size: 1.1rem !important;
+    margin-right: 15px !important;
+}
+
+.search-container-premium .search-box input {
+    flex: 1 !important;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    color: #fff !important;
+    font-family: 'SF Pro Display', sans-serif !important;
+    font-size: 1rem !important;
+    padding: 12px 0 !important;
+}
+
+.search-container-premium .categories-scroll {
+    display: flex !important;
+    gap: 12px !important;
+    justify-content: center !important;
+    width: 100% !important;
+}
+
+.search-container-premium .tag {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+    padding: 10px 22px !important;
+    border-radius: 14px !important;
+    font-weight: 600 !important;
+    font-size: 0.85rem !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+}
+
+.search-container-premium .tag.active {
+    background: #fff !important;
+    color: #000 !important;
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1) !important;
+}
+
+/* RESET DE CONFLITOS */
+.search-ultra-premium {
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 60px auto !important;
+    padding: 0 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 30px !important;
+}
+
+/* A BARRA DE VIDRO (APPLE STYLE) */
+.glass-search-bar {
+    display: flex !important;
+    align-items: center !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    backdrop-filter: blur(25px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(25px) saturate(180%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 22px !important;
+    width: 100% !important;
+    max-width: 600px !important;
+    height: 60px !important;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2) !important;
+}
+
+.glass-search-bar:focus-within {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border-color: #a855f7 !important;
+    transform: translateY(-4px) scale(1.01) !important;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 20px rgba(168, 85, 247, 0.2) !important;
+}
+
+.glass-search-bar i {
+    margin-left: 20px !important;
+    color: #a855f7 !important;
+    font-size: 1.1rem !important;
+    filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.5)) !important;
+}
+
+.glass-search-bar input {
+    flex: 1 !important;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    padding: 0 15px !important;
+    color: #fff !important;
+    font-size: 1.05rem !important;
+    font-family: 'SF Pro Display', sans-serif !important;
+}
+
+/* AS TAGS PREMIUM */
+.premium-tags-container {
+    display: flex !important;
+    gap: 12px !important;
+    justify-content: center !important;
+}
+
+.premium-tag {
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+    padding: 10px 22px !important;
+    border-radius: 14px !important;
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+}
+
+.premium-tag.active {
+    background: #fff !important;
+    color: #000 !important;
+    border-color: #fff !important;
+}
+
+.premium-tag:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #fff !important;
+}

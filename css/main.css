@@ -1,0 +1,266 @@
+@import url("header.css");
+@import url("hero.css");
+/* search.css now self-contained with section styles */
+@import url("auth-btn.css");
+@import url("auth-page-upgraded.css");
+@import url("auth.css"); 
+@import url("bottons.css");
+@import url("cards-premium.css");
+@import url("cursor.css");
+@import url("scroll.css");
+@import url("search.css");
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* body backgrounds consolidated to hero.css */
+body {
+    color: #fff;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+
+.main-header {
+    position: sticky !important;
+    top: 0;
+    width: 100%;
+    z-index: 2000 !important;
+    background: rgba(10, 10, 10, 0.7) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 15px 30px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.nav-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+}
+
+/* Nav hiding moved to bottons.css (.nav-actions .btn-login handled there) */
+
+
+/* .btn-add moved to bottons.css */
+
+
+.modal-overlay {
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(0, 0, 0, 0.9) !important;
+    backdrop-filter: blur(15px) !important;
+    display: none;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 9999 !important;
+    padding: 20px !important;
+}
+
+.modal-card {
+    background: #0a0a0a !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding: 2.5rem !important;
+    border-radius: 24px !important;
+    width: 100% !important;
+    max-width: 500px !important;
+    max-height: 85vh !important;
+    overflow-y: auto !important;
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        padding: 12px 16px !important;
+    }
+
+    .container {
+        padding: 0 20px !important;
+    }
+
+    .logo-text { 
+        display: none !important; 
+    }
+
+    .btn-add {
+        padding: 8px 12px !important;
+        font-size: 0.65rem !important;
+    }
+
+    .hero-section {
+        padding: 60px 0 30px 0 !important;
+    }
+
+    .hero-section h1 {
+        font-size: 3rem !important;
+        line-height: 1.0 !important;
+        letter-spacing: -2px !important;
+        font-weight: 900 !important;
+        width: 100% !important;
+        transform: scaleX(1.05) !important;
+    }
+
+    .hero-section .subtitle {
+        font-size: 0.85rem !important;
+        color: rgba(255, 255, 255, 0.6) !important;
+        max-width: 280px !important;
+        margin: 15px auto 0 !important;
+        line-height: 1.4 !important;
+    }
+
+/* Search mobile styles moved to search.css */
+
+
+    .cards-grid {
+        gap: 40px !important;
+    }
+
+    .modal-actions {
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+}
+
+.file-input-wrapper {
+    width: 100%;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.btn-file-trigger {
+    background: rgba(168, 85, 247, 0.1);
+    color: #a855f7;
+    border: none;
+    padding: 0 12px;
+    height: 100%;
+    font-size: 0.8rem;
+}
+
+.btn-delete-admin {
+    position: absolute !important;
+    top: 12px !important;
+    right: 12px !important;
+    background: rgba(239, 68, 68, 0.8) !important;
+    color: #fff !important;
+    padding: 6px 10px !important;
+    border-radius: 6px !important;
+    font-size: 0.65rem !important;
+}
+/* Estilo para a lista de endereços do Nominatim */
+.autocomplete-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #1a1a1a !important;
+    border: 1px solid rgba(168, 85, 247, 0.3) !important;
+    border-radius: 12px;
+    z-index: 9999;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    margin-top: 5px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+.result-item {
+    padding: 12px 15px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: #a1a1aa;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.result-item:hover {
+    background: rgba(168, 85, 247, 0.15) !important;
+    color: #fff !important;
+}
+
+.upload-container {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: 2px dashed rgba(168, 85, 247, 0.3) !important;
+    border-radius: 16px !important;
+    padding: 30px !important;
+    text-align: center !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+}
+
+.upload-container:hover {
+    background: rgba(168, 85, 247, 0.05) !important;
+    border-color: #a855f7 !important;
+}
+
+.upload-placeholder i {
+    font-size: 2.5rem !important;
+    color: #a855f7 !important;
+    margin-bottom: 10px !important;
+}
+
+.upload-placeholder p {
+    color: #fff !important;
+    font-weight: 600 !important;
+    margin: 5px 0 !important;
+}
+
+.upload-placeholder span {
+    color: #71717a !important;
+    font-size: 0.8rem !important;
+}
+
+/* Grid de miniaturas para quando o usuário escolher as fotos */
+.preview-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)) !important;
+    gap: 10px !important;
+    margin-top: 15px !important;
+}
+
+.preview-item {
+    width: 80px !important;
+    height: 80px !important;
+    border-radius: 8px !important;
+    object-fit: cover !important;
+    border: 2px solid #a855f7 !important;
+}
+
+/* REMOÇÃO TOTAL E AGRESSIVA DE QUALQUER SETA OU CONTROLE PADRÃO */
+
+/* 1. Mata as setas de campos numéricos (Chrome, Safari, Edge, Opera) */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    margin: 0 !important;
+    display: none !important; /* Força o desaparecimento */
+}
+
+/* 2. Mata as setas de campos numéricos (Firefox) */
+input[type="number"] {
+    -moz-appearance: textfield !important;
+    appearance: textfield !important;
+}
+
+/* 3. Mata as setas e controles de campos de data (Webkit) */
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    -webkit-appearance: none !important;
+    display: none !important;
+    appearance: none !important;
+}
+
+/* 4. Garante que nenhum elemento de 'spin' sobreviva no hover */
+input:hover::-webkit-inner-spin-button,
+input:active::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    display: none !important;
+}

@@ -1,0 +1,29 @@
+.cursor-glow {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(
+        circle, 
+        rgba(168, 85, 247, 0.15) 0%, 
+        rgba(99, 102, 241, 0.08) 40%, 
+        transparent 75%
+    ) !important;
+    border-radius: 50% !important;
+    position: fixed !important;
+    pointer-events: none !important;
+    z-index: 9999 !important;
+    transform: translate(-50%, -50%) !important;
+    mix-blend-mode: screen !important;
+    filter: blur(20px) !important;
+    transition: width 0.4s ease, height 0.4s ease !important;
+    will-change: transform;
+}
+
+.cursor-glow.active {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(
+        circle, 
+        rgba(168, 85, 247, 0.25) 0%, 
+        transparent 70%
+    ) !important;
+}

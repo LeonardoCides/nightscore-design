@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+#eventos-container {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)) !important;
+  gap: 2.5rem !important;
+  width: 100% !important;
+  max-width: 1400px !important;
+  margin: 4rem auto !important;
+  padding: 0 2rem !important;
+}
+
+.event-card-compact {
+  background: rgba(20, 20, 24, 0.8) !important;
+  backdrop-filter: blur(25px) !important;
+  -webkit-backdrop-filter: blur(25px) !important;
+  border: 1px solid rgba(168, 85, 247, 0.15) !important;
+  border-radius: 28px !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  transition: all 0.6s cubic-bezier(0.15, 1, 0.3, 1) !important;
+  height: 540px !important;
+  position: relative !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
+}
+
+.event-card-compact:hover {
+  transform: translateY(-12px) !important;
+  border-color: rgba(168, 85, 247, 0.5) !important;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 25px rgba(168, 85, 247, 0.2) !important;
+}
+
+.card-image {
+  height: 240px !important;
+  width: 100% !important;
+  background-size: cover !important;
+  background-position: center !important;
+  position: relative !important;
+}
+
+.destaque-badge {
+  position: absolute !important;
+  top: 18px !important;
+  left: 18px !important;
+  background: linear-gradient(135deg, #8257e5 0%, #a855f7 100%) !important;
+  color: #fff !important;
+  padding: 6px 14px !important;
+  border-radius: 10px !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  z-index: 10 !important;
+  box-shadow: 0 4px 15px rgba(130, 87, 229, 0.5) !important;
+}
+
+.tipo-evento-badge {
+  position: absolute !important;
+  top: 18px !important;
+  right: 18px !important;
+  background: rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #fff !important;
+  padding: 6px 14px !important;
+  border-radius: 10px !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  z-index: 10 !important;
+}
+
+.card-content {
+  padding: 1.8rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 !important;
+}
+
+.card-header h3 {
+  margin: 0 0 1rem 0 !important;
+  color: #fff !important;
+  font-family: 'SF Pro Display', sans-serif !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.5px !important;
+}
+
+.info-wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+
+.location, .data {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;
+}
+
+.location i, .data i {
+  color: #a855f7 !important;
+  font-size: 1.2rem !important;
+  filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.9)) !important;
+  width: 20px !important;
+  text-align: center !important;
+  animation: ledPulse 2s infinite ease-in-out !important;
+}
+
+@keyframes ledPulse {
+  0%, 100% { opacity: 1; filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.9)); }
+  50% { opacity: 0.7; filter: drop-shadow(0 0 15px rgba(168, 85, 247, 1)); }
+}
+
+.card-footer {
+  margin-top: auto !important;
+  padding-top: 1.5rem !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.preco-badge {
+  color: #fff !important;
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.2px !important;
+}
+
+.btn-ticket-mini {
+  background: linear-gradient(135deg, #8257e5 0%, #6366f1 100%) !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  padding: 10px 24px !important;
+  border-radius: 14px !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 8px 20px rgba(130, 87, 229, 0.3) !important;
+  white-space: nowrap !important;
+}
+
+.btn-ticket-mini:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 12px 25px rgba(130, 87, 229, 0.5) !important;
+  filter: brightness(1.1) !important;
+}
+
+@media (max-width: 768px) {
+  #eventos-container {
+    grid-template-columns: 1fr !important;
+    padding: 0 1.2rem !important;
+  }
+}
