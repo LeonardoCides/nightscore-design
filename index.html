@@ -46,10 +46,10 @@
         .text-gradient {
             background: linear-gradient(135deg, #fff 30%, #a855f7 100%);
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            -webkit-fill-color: transparent;
+            -webkit-background-clip: text;
         }
 
-        /* CORREÇÃO DE ALINHAMENTO E IMAGENS */
         #eventos-container {
             display: grid !important;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)) !important;
@@ -60,7 +60,7 @@
         }
 
         .event-card-compact {
-            height: 540px !important; /* Altura fixa para alinhar todos no PC */
+            height: 540px !important;
             display: flex !important;
             flex-direction: column !important;
             background: rgba(20, 20, 24, 0.8) !important;
@@ -78,8 +78,44 @@
             position: relative !important;
         }
 
-        a.btn-login, a.btn-ticket-mini {
-            text-decoration: none !important;
+        /* ============================================================
+           RESPONSIVIDADE (MOBILE & TABLET)
+           ============================================================ */
+        
+        @media (max-width: 1024px) {
+            .hero-section h1 { font-size: 3.5rem !important; }
+            #eventos-container { grid-template-columns: 1fr 1fr !important; }
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 15px 20px !important; }
+            .logo-text { font-size: 1.2rem !important; }
+            
+            .hero-section h1 { font-size: 2.8rem !important; }
+            .subtitle { font-size: 1rem !important; padding: 0 20px; }
+
+            #eventos-container { 
+                grid-template-columns: 1fr !important; 
+                padding: 0 1.5rem 60px 1.5rem !important;
+            }
+
+            .nav-actions span { display: none; } /* Esconde o texto dos botões no mobile */
+            .btn-login, .btn-add { padding: 0 15px !important; width: 45px !important; height: 45px !important; border-radius: 12px !important; }
+            .nav-actions { gap: 8px !important; }
+            
+            .premium-tags-container { 
+                overflow-x: auto !important; 
+                justify-content: flex-start !important; 
+                padding: 10px 20px !important;
+                width: 100vw !important;
+            }
+            .premium-tag { white-space: nowrap !important; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section h1 { font-size: 2.2rem !important; }
+            .event-card-compact { height: 500px !important; }
+            .card-img { height: 220px !important; }
         }
     </style>
 </head>
@@ -94,7 +130,6 @@
         </a>
 
         <div class="nav-actions">
-            <a href="#" class="btn-nav-social"><i class="fa-solid fa-star"></i> <span>Curadoria</span></a>
             <a href="login.html" class="btn-login"><i class="fa-solid fa-sign-in-alt"></i> <span>Entrar</span></a>
             <label for="modal-toggle" class="btn-add" style="cursor: pointer;"><i class="fa-solid fa-calendar-plus"></i> <span>Nova</span></label>
         </div>
@@ -102,15 +137,15 @@
 
     <main class="container">
         <section class="hero-section reveal">
-            <div class="badge"><i class="fa-solid fa-wand-magic-sparkles"></i> <span>42</span> festas por perto</div>
+            <div class="badge" style="margin: 0 auto 2rem; display: flex; width: fit-content;"><i class="fa-solid fa-wand-magic-sparkles"></i> <span>42</span> festas por perto</div>
             <h1>Descubra as <br><span class="text-gradient">melhores festas</span></h1>
             <p class="subtitle" style="text-align: center; margin: 0 auto 2rem;">Esteja onde todos querem estar.</p>
         </section>
 
         <section class="search-ultra-premium reveal">
-            <div class="glass-search-bar">
+            <div class="glass-search-bar" style="margin: 0 auto;">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" placeholder="Buscar festas, locais...">
+                <input type="text" placeholder="Buscar festas...">
             </div>
             <div class="premium-tags-container">
                 <button class="premium-tag active">Todas</button>
@@ -132,10 +167,10 @@
                     </div>
                     <div class="card-body" style="padding: 1.8rem; flex-grow: 1; display: flex; flex-direction: column;">
                         <h4 style="font-family: 'Outfit'; font-size: 1.4rem; margin-bottom: 8px; color: white;">Night Neon Theory</h4>
-                        <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: auto;"><i class="fa-solid fa-location-dot" style="color: #a855f7;"></i> Rooftop, SP</p>
+                        <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: auto;"><i class="fa-solid fa-location-dot" style="color: #a855f7;"></i> São Paulo, SP</p>
                         <div class="card-footer" style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem;">
-                            <span class="preco-badge" style="font-size: 1.3rem; font-weight: 700;">R$ 150</span>
-                            <a href="#" class="btn-ticket-mini">Garantir</a>
+                            <span class="preco-badge" style="color: #fff; font-size: 1.3rem; font-weight: 700;">R$ 150</span>
+                            <a href="#" class="btn-ticket-mini" style="text-decoration: none;">Garantir</a>
                         </div>
                     </div>
                 </div>
@@ -148,8 +183,8 @@
                         <h4 style="font-family: 'Outfit'; font-size: 1.4rem; margin-bottom: 8px; color: white;">Bunker Session</h4>
                         <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: auto;"><i class="fa-solid fa-location-dot" style="color: #a855f7;"></i> Industrial, PR</p>
                         <div class="card-footer" style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem;">
-                            <span class="preco-badge">R$ 80</span>
-                            <a href="#" class="btn-ticket-mini">Garantir</a>
+                            <span class="preco-badge" style="color: #fff; font-size: 1.3rem; font-weight: 700;">R$ 80</span>
+                            <a href="#" class="btn-ticket-mini" style="text-decoration: none;">Garantir</a>
                         </div>
                     </div>
                 </div>
@@ -162,8 +197,8 @@
                         <h4 style="font-family: 'Outfit'; font-size: 1.4rem; margin-bottom: 8px; color: white;">Sunset Lounge</h4>
                         <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: auto;"><i class="fa-solid fa-location-dot" style="color: #a855f7;"></i> Marina, RJ</p>
                         <div class="card-footer" style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem;">
-                            <span class="preco-badge">R$ 220</span>
-                            <a href="#" class="btn-ticket-mini">Garantir</a>
+                            <span class="preco-badge" style="color: #fff; font-size: 1.3rem; font-weight: 700;">R$ 220</span>
+                            <a href="#" class="btn-ticket-mini" style="text-decoration: none;">Garantir</a>
                         </div>
                     </div>
                 </div>
@@ -176,8 +211,8 @@
                         <h4 style="font-family: 'Outfit'; font-size: 1.4rem; margin-bottom: 8px; color: white;">Gaia Experience</h4>
                         <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: auto;"><i class="fa-solid fa-location-dot" style="color: #a855f7;"></i> Open Air, MG</p>
                         <div class="card-footer" style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem;">
-                            <span class="preco-badge">R$ 190</span>
-                            <a href="#" class="btn-ticket-mini">Garantir</a>
+                            <span class="preco-badge" style="color: #fff; font-size: 1.3rem; font-weight: 700;">R$ 190</span>
+                            <a href="#" class="btn-ticket-mini" style="text-decoration: none;">Garantir</a>
                         </div>
                     </div>
                 </div>
@@ -190,8 +225,8 @@
                         <h4 style="font-family: 'Outfit'; font-size: 1.4rem; margin-bottom: 8px; color: white;">Urban Lights</h4>
                         <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: auto;"><i class="fa-solid fa-location-dot" style="color: #a855f7;"></i> City Center, SC</p>
                         <div class="card-footer" style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem;">
-                            <span class="preco-badge">R$ 310</span>
-                            <a href="#" class="btn-ticket-mini">Garantir</a>
+                            <span class="preco-badge" style="color: #fff; font-size: 1.3rem; font-weight: 700;">R$ 310</span>
+                            <a href="#" class="btn-ticket-mini" style="text-decoration: none;">Garantir</a>
                         </div>
                     </div>
                 </div>
@@ -204,8 +239,8 @@
                         <h4 style="font-family: 'Outfit'; font-size: 1.4rem; margin-bottom: 8px; color: white;">After Club</h4>
                         <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: auto;"><i class="fa-solid fa-location-dot" style="color: #a855f7;"></i> Secret Spot, SP</p>
                         <div class="card-footer" style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem;">
-                            <span class="preco-badge">R$ 60</span>
-                            <a href="#" class="btn-ticket-mini">Garantir</a>
+                            <span class="preco-badge" style="color: #fff; font-size: 1.3rem; font-weight: 700;">R$ 60</span>
+                            <a href="#" class="btn-ticket-mini" style="text-decoration: none;">Garantir</a>
                         </div>
                     </div>
                 </div>
@@ -214,15 +249,12 @@
     </main>
 
     <div class="modal-overlay" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(15px); z-index: 3000; align-items: center; justify-content: center;">
-        <div class="modal-card" style="position: relative; max-width: 600px; width: 90%;">
+        <div class="modal-card" style="position: relative; max-width: 600px; width: 90%; background: #111; padding: 30px; border-radius: 20px; border: 1px solid #333;">
             <label for="modal-toggle" style="position: absolute; top: 20px; right: 20px; color: white; cursor: pointer; font-size: 1.5rem;"><i class="fa-solid fa-xmark"></i></label>
-            <h2>Publicar Nova Festa</h2>
+            <h2 style="color: white; margin-bottom: 20px;">Publicar Festa</h2>
             <form>
-                <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px;">
-                    <div class="form-group"><label>Nome</label><input type="text" placeholder="Ex: Bailinho do Night" required></div>
-                    <div class="form-group"><label>Data</label><input type="date" required></div>
-                </div>
-                <div class="modal-actions" style="margin-top: 25px;"><button type="submit" class="btn-add" style="width: 100%;">PUBLICAR FESTA ↗</button></div>
+                <input type="text" placeholder="Nome do Evento" style="width: 100%; padding: 12px; margin-bottom: 15px; background: #222; border: 1px solid #444; color: white; border-radius: 8px;">
+                <button type="submit" class="btn-add" style="width: 100%; height: 50px; background: #a855f7; color: white; border: none; border-radius: 8px; cursor: pointer;">Publicar Agora ↗</button>
             </form>
         </div>
     </div>
